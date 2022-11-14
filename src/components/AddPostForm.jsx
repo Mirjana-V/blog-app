@@ -1,17 +1,17 @@
 import React from 'react'
 
-export default function AddPostForm({newPost, setNewPost, onChange, onReset}) {
+export default function AddPostForm({id, newPost, setNewPost, onSubmit, onReset}) {
 
   return (
-    <form onSubmit={onChange}>
+    <form onSubmit={onSubmit}>
       <label>Title:</label>
       <input
         required
         type="text"
         minLength="2"
         id="title"
-        value={newPost.title}
-        onChange={({ target }) => setNewPost({ ...newPost, title: target.value })}
+        value={newPost && newPost.title}
+        onChange={({ e }) => setNewPost({ ...newPost, title: e.target.value })}
       />
       <br />
       <br />
@@ -21,13 +21,13 @@ export default function AddPostForm({newPost, setNewPost, onChange, onReset}) {
         type="text"
         maxLength="300"
         id="title"
-        value={newPost.text}
-        onChange={({ target }) => setNewPost({ ...newPost, text: target.value })}
+        value={newPost && newPost.text}
+        onChange={({ e }) => setNewPost({ ...newPost, text: e.target.value })}
       />
       <br />
       <br />
       <div>
-        <button type="submit">Submit</button>
+         <button type="submit">{id ? 'Edit' : "Add Post"}</button>
       </div>
       <br />
       <div>
