@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function AddPostForm({newPost, setNewPost, onChange}) {
+export default function AddPostForm({newPost, setNewPost, onChange, onReset}) {
 
   return (
     <form onSubmit={onChange}>
@@ -28,6 +28,10 @@ export default function AddPostForm({newPost, setNewPost, onChange}) {
       <br />
       <div>
         <button type="submit">Submit</button>
+      </div>
+      <br />
+      <div>
+        <button type="button" onClick={onReset}>Reset</button>
       </div>
     </form>
   );

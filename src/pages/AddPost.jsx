@@ -14,11 +14,22 @@ export default function AddPost() {
             PostsService.add(newPost);
         history.push('/posts');
     }
+
+
+    const handleReset=()=>{
+        setNewPost({
+          title: "",
+          text: "",
+          
+        })
+      }
+
     return <div><h2>Add New Post:</h2>
         <AddPostForm
             newPost={newPost}
             setNewPost={setNewPost}
             onChange={handleSubmit}
+            onReset={handleReset}
          />
     </div>
 }
