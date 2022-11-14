@@ -8,10 +8,10 @@ export default function AddPostForm({newPost, setNewPost, onChange, onReset}) {
       <input
         required
         type="text"
+        minLength="2"
         id="title"
         value={newPost.title}
-        onChange={({ target }) => setNewPost({ ...newPost, title: target.value })
-                        }
+        onChange={({ target }) => setNewPost({ ...newPost, title: target.value })}
       />
       <br />
       <br />
@@ -19,10 +19,10 @@ export default function AddPostForm({newPost, setNewPost, onChange, onReset}) {
       <input
         required
         type="text"
+        maxLength="300"
         id="title"
         value={newPost.text}
-        onChange={({ target }) => setNewPost({ ...newPost, text: target.value })
-                        }
+        onChange={({ target }) => setNewPost({ ...newPost, text: target.value })}
       />
       <br />
       <br />
