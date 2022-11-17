@@ -4,11 +4,13 @@ import PostsService from "../services/PostsService";
 import SinglePostComponent from "../components/SinglePostComponent";
 import { useEffect } from "react";
 import AddComment from './AddComment';
+import useFormattedDate from "../hooks/useFormattedDate";
 
 export default function SinglePost() {
 
     const{id} = useParams();
     const[post, setPost] = useState({});
+    const formattedDate = useFormattedDate(post.createdAt);
 
 
     useEffect(() => {
@@ -31,10 +33,12 @@ export default function SinglePost() {
             title={post.title}
             text={post.text}
             post={post}
+            formattedDate={formattedDate}
             />
         <AddComment
         postId={post.id}
-        addCommentFunction={handleAddComment}/>
+        addCommentFunction={handleAddComment}
+        />
     </div>
   )
 }

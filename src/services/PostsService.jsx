@@ -19,7 +19,7 @@ class PostsService{
 
     async add(newPost) {
         try {
-            const { data } = await axiosInstance.post('posts', newPost);
+            const { data } = await axiosInstance.post('/posts', newPost);
             return data;
         } catch (error) {
             console.log(error);
