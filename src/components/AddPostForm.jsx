@@ -11,7 +11,7 @@ export default function AddPostForm({id, newPost, setNewPost, onSubmit, onReset}
         minLength="2"
         id="title"
         value={newPost && newPost.title}
-        onChange={({ e }) => setNewPost({ ...newPost, title: e.target.value })}
+        onChange={({ target }) => setNewPost({ ...newPost, title: target.value })}
       />
       <br />
       <br />
@@ -22,7 +22,7 @@ export default function AddPostForm({id, newPost, setNewPost, onSubmit, onReset}
         maxLength="300"
         id="title"
         value={newPost && newPost.text}
-        onChange={({ e }) => setNewPost({ ...newPost, text: e.target.value })}
+        onChange={({ target }) => setNewPost({ ...newPost, text: target.value })}
       />
       <br />
       <br />
